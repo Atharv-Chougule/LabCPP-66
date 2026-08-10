@@ -12,3 +12,4 @@ int main ()
 
     cout<<"Sum of two number : "<<sum << "Avrage : "<<avg ;
 }
+
