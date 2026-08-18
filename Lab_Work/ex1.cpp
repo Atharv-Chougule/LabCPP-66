@@ -44,5 +44,6 @@ int main(){
     Product pro ;
     pro.getdata ();
     pro.putdata ();
+    pro.calculate_bill();
     return 0;
 }
