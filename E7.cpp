@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdio.h>
 using namespace std;
 
 class Student {
@@ -8,68 +7,78 @@ class Student {
 
 public:
     void getdata() {
-        cout << "\n -----------------------------------------";
-        cout << "\n Enter Roll No. : ";
+        cout << "\n-----------------------------------------";
+        cout << "\nEnter Roll No. : ";
         cin >> roll;
-        cout << "\n Enter Student Name : ";
+
+        cout << "\nEnter Student Name : ";
         cin >> name;
     }
 
     void putdata() {
-        cout << "\n -----------------------------------------";
-        cout << "\n ********** Student Marklist **********";
-        cout << "\n -----------------------------------------";
-        cout << "\n Roll No. : " << roll;
-        cout << "\n Student Name : " << name << endl;
+        cout << "\n-----------------------------------------";
+        cout << "\n********** Student Marklist **********";
+        cout << "\n-----------------------------------------";
+        cout << "\nRoll No. : " << roll;
+        cout << "\nStudent Name : " << name << endl;
     }
 };
 
-class StudentExam : public Student { // Class StudentExam derived from Class Student
-public:
+class StudentExam : public Student {
+protected:
     int sub1, sub2, sub3, sub4, sub5, sub6;
     float per;
 
+public:
     void accept_data() {
         getdata();
-        cout << "\n Enter Marks for Subject 1 : ";
+
+        cout << "\nEnter Marks for Subject 1 : ";
         cin >> sub1;
-        cout << "\n Enter Marks for Subject 2 : ";
+
+        cout << "\nEnter Marks for Subject 2 : ";
         cin >> sub2;
-        cout << "\n Enter Marks for Subject 3 : ";
+
+        cout << "\nEnter Marks for Subject 3 : ";
         cin >> sub3;
-        cout << "\n Enter Marks for Subject 4 : ";
+
+        cout << "\nEnter Marks for Subject 4 : ";
         cin >> sub4;
-        cout << "\n Enter Marks for Subject 5 : ";
+
+        cout << "\nEnter Marks for Subject 5 : ";
         cin >> sub5;
-        cout << "\n Enter Marks for Subject 6 : ";
+
+        cout << "\nEnter Marks for Subject 6 : ";
         cin >> sub6;
     }
 
     void display_data() {
         putdata();
-        cout << "\n Marks of Subject 1 : " << sub1;
-        cout << "\n Marks of Subject 2 : " << sub2;
-        cout << "\n Marks of Subject 3 : " << sub3;
-        cout << "\n Marks of Subject 4 : " << sub4;
-        cout << "\n Marks of Subject 5 : " << sub5;
-        cout << "\n Marks of Subject 6 : " << sub6;
+
+        cout << "\nMarks of Subject 1 : " << sub1;
+        cout << "\nMarks of Subject 2 : " << sub2;
+        cout << "\nMarks of Subject 3 : " << sub3;
+        cout << "\nMarks of Subject 4 : " << sub4;
+        cout << "\nMarks of Subject 5 : " << sub5;
+        cout << "\nMarks of Subject 6 : " << sub6;
     }
 };
 
-class StudentResult : public StudentExam { // Class StudentResult derived from Class StudentExam
+class StudentResult : public StudentExam {
 public:
     void calculate() {
         per = (sub1 + sub2 + sub3 + sub4 + sub5 + sub6) / 6.0;
-        cout << "\n\n Total Percentage : " << per;
-        cout << "\n ----------------------------------------- \n";
+
+        cout << "\n\nTotal Percentage : " << per;
+        cout << "\n-----------------------------------------\n";
     }
 };
 
 int main() {
-    StudentResult str; // Object 'str' is created of derived Class StudentResult
+    StudentResult str;
     int cnt, i;
 
-    cout << "\n Enter No. of Students You Want? : ";
+    cout << "\nEnter No. of Students You Want? : ";
     cin >> cnt;
 
     for (i = 0; i < cnt; i++) {
