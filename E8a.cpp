@@ -12,7 +12,7 @@ public:
     }
 
     void operator-() {
-        feet--;
+        feet=feet-3;
         inch--;
         cout << "\nFeet & Inches (Decrement): " << feet << "'" << inch;
     }
